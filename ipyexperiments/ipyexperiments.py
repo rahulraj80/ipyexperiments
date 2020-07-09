@@ -16,6 +16,9 @@ IPyExperimentData   = namedtuple('IPyExperimentData', ['cpu', 'gpu'])
 
 process = psutil.Process(os.getpid())
 
+def new_test_fn():
+    print("new test")
+
 class IPyExperiments():
     "Create an experiment with time/memory checkpoints"
 
@@ -53,7 +56,7 @@ class IPyExperiments():
         # grab the notebook var names during creation
         ipython = get_ipython()
         self.namespace = NamespaceMagics()
-        self.namespace.shell = ipython.kernel.shell
+        self.namespace.shell = ipython.kernel.shell ### TODO
         self.var_names_start = self.get_var_names()
         #print(self.var_names_start)
 
