@@ -16,8 +16,9 @@ IPyExperimentData   = namedtuple('IPyExperimentData', ['cpu', 'gpu'])
 
 process = psutil.Process(os.getpid())
 
-def new_test_fn():
-    print("new test")
+class foo_bar():
+    def new_test_fn():
+        print("new test")
 
 class IPyExperiments():
     "Create an experiment with time/memory checkpoints"
